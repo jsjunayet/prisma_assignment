@@ -1,13 +1,18 @@
 import { Customer } from "@prisma/client";
+import { prisma } from "../../../share/prismaClient";
 
-import { PrismaClient } from '@prisma/client'
-let prisma = new PrismaClient()
 const customerCreateFromDB = async(payload:Customer)=>{
     const result = await prisma.customer.create({
         data:payload
     })
     return result
  }
+ const customerGetFromDB = async()=>{
+    const result = await prisma.customer.findMany()
+    return result
+ }
+
 export const customerService ={
-    customerCreateFromDB
+    customerCreateFromDB,
+    customerGetFromDB
 }
