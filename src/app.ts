@@ -1,7 +1,7 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
-import router from './app/modules/Customer/customer.route';
 import { GlobalErrorHandle } from './app/modules/MiddleWare/globalErrorHandle';
+import router from './app/router';
 const app:Application = express()
 
 app.use(cors())
@@ -11,6 +11,7 @@ app.get('/', (req:Request, res:Response)=>{
     res.send({message:"Assinment-7 start !"})
 })
 app.use('/api/v1', router)
+
 app.use(GlobalErrorHandle)
 
 app.use((req:Request, res:Response, next:NextFunction)=>{

@@ -1,20 +1,18 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, RequestHandler, Response } from "express";
 import { customerService } from "./customer.service";
+import { sendResponse } from "../../../share/sendResponse";
+import { catchAsync } from "../../../share/catchAsync";
 
-const customerCreateFromDB = async(req:Request, res:Response)=>{
-    try{
+
+const customerCreateFromDB =catchAsync(async(req:Request, res:Response)=>{
    const result = await customerService.customerCreateFromDB(req.body)
-    res.status(200).json({
+   sendResponse(res, {
         success:true,
+        statusCode:200,
         message:"customer create Sucessfully!",
         data: result
-    })
-
-    }catch(err){
-        console.log(err);
-    }
-   
-}
+   })
+})
 export const customerController ={
     customerCreateFromDB
 }
