@@ -2,6 +2,7 @@ import express from 'express';
 import { serviceController } from './service.controller';
 const router = express.Router()
 
+router.get('/status', serviceController.overdueServicesGetFromDB)
 router.post('/', serviceController.serviceCreateFromDB)
 router.get('/', serviceController.serviceGetFromDB)
 router.get('/:id', serviceController.serviceGetSingleFromDB)

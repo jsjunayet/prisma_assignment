@@ -7,7 +7,7 @@ A Node.js + TypeScript backend application using Express and Prisma ORM to manag
 
 ## 🔗 Live Backend
 
-> Hosted on: [https://assignment07-backend-production.up.railway.app](https://assignment07-backend-production.up.railway.app)
+> Hosted on: [https://assignment-07-opal.vercel.app](https://assignment07-backend-production.up.railway.app)
 
 ---
 
@@ -78,7 +78,7 @@ npm start
 - 🔐 RESTful API built with Express and TypeScript.
 - 🧩 Prisma ORM integration for type-safe database queries.
 - 🗓 Built-in date utilities using `date-fns`.
-- 🚀 Easy deployment ready for  Render.
+- 🚀 Easy deployment ready for  supabase.
 - 🔄 Organized code structure using `src/` and `dist/`.
 - 💻 Full TypeScript support with clean build scripts.
 - 🔁 Live reload with `ts-node-dev` for better dev experience.
