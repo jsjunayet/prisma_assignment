@@ -10,7 +10,7 @@ app.use(express.json()),
 app.get('/', (req:Request, res:Response)=>{
     res.send({message:"Assinment-7 start !"})
 })
-app.use('/api/v1', router)
+app.use('/api', router)
 
 app.use(GlobalErrorHandle)
 

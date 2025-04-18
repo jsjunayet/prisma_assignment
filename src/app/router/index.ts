@@ -10,11 +10,11 @@ const AllRoutes =[
         route: customerRoutes
     },
     {
-        path:'/bike',
+        path:'/bikes',
         route: bikeRoutes
     },
     {
-        path:'/service',
+        path:'/services',
         route: serviceRoutes
     }
 ]
