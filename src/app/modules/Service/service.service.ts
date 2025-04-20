@@ -3,6 +3,14 @@ import { prisma } from "../../../share/prismaClient";
 import { AppError } from "../../../share/appError";
 import {subDays} from "date-fns"
 const serviceCreateFromDB = async(payload:Service)=>{
+    const isExit = await prisma.bike.findUnique({
+        where:{
+            bikeId:payload.bikeId
+        }
+    })
+    if (!isExit) {
+        throw new AppError("bike not found", 404)
+     }
     const result = await prisma.service.create({
         data:payload
     })

@@ -7,7 +7,7 @@ A Node.js + TypeScript backend application using Express and Prisma ORM to manag
 
 ## 🔗 Live Backend
 
-> Hosted on: [https://assignment-07-opal.vercel.app](https://assignment07-backend-production.up.railway.app)
+> Hosted on: [https://assignment-07-opal.vercel.app](https://assignment-07-opal.vercel.app)
 
 ---
 

@@ -3,6 +3,15 @@ import { prisma } from "../../../share/prismaClient";
 import { AppError } from "../../../share/appError";
 
 const bikeCreateFromDB = async(payload:Bike)=>{
+    const isExit = await prisma.customer.findUnique({
+        where:{
+            customerId:payload.customerId
+        }
+    })
+    if (!isExit) {
+        throw new AppError("bike not found", 404)
+     }
+
     const result = await prisma.bike.create({
         data:payload
     })

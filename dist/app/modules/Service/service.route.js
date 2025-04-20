@@ -7,6 +7,7 @@ exports.serviceRoutes = void 0;
 const express_1 = __importDefault(require("express"));
 const service_controller_1 = require("./service.controller");
 const router = express_1.default.Router();
+router.get('/status', service_controller_1.serviceController.overdueServicesGetFromDB);
 router.post('/', service_controller_1.serviceController.serviceCreateFromDB);
 router.get('/', service_controller_1.serviceController.serviceGetFromDB);
 router.get('/:id', service_controller_1.serviceController.serviceGetSingleFromDB);
