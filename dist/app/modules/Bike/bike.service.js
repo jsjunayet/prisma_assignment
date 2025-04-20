@@ -13,6 +13,14 @@ exports.bikeService = void 0;
 const prismaClient_1 = require("../../../share/prismaClient");
 const appError_1 = require("../../../share/appError");
 const bikeCreateFromDB = (payload) => __awaiter(void 0, void 0, void 0, function* () {
+    const isExit = yield prismaClient_1.prisma.customer.findUnique({
+        where: {
+            customerId: payload.customerId
+        }
+    });
+    if (!isExit) {
+        throw new appError_1.AppError("customer not found", 404);
+    }
     const result = yield prismaClient_1.prisma.bike.create({
         data: payload
     });

@@ -14,6 +14,14 @@ const prismaClient_1 = require("../../../share/prismaClient");
 const appError_1 = require("../../../share/appError");
 const date_fns_1 = require("date-fns");
 const serviceCreateFromDB = (payload) => __awaiter(void 0, void 0, void 0, function* () {
+    const isExit = yield prismaClient_1.prisma.bike.findUnique({
+        where: {
+            bikeId: payload.bikeId
+        }
+    });
+    if (!isExit) {
+        throw new appError_1.AppError("bike not found", 404);
+    }
     const result = yield prismaClient_1.prisma.service.create({
         data: payload
     });

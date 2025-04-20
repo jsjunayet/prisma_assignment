@@ -9,7 +9,7 @@ const bikeCreateFromDB = async(payload:Bike)=>{
         }
     })
     if (!isExit) {
-        throw new AppError("bike not found", 404)
+        throw new AppError("customer not found", 404)
      }
 
     const result = await prisma.bike.create({
